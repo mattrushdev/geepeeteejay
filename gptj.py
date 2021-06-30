@@ -1,6 +1,11 @@
 import os
 import requests 
 from jax.config import config
+
+config.FLAGS.jax_xla_backend = "tpu_driver"
+config.FLAGS.jax_backend_target = "Host TPU Interpreter" 
+
+
 import time
 
 import jax
