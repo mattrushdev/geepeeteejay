@@ -2,10 +2,6 @@ import os
 import requests 
 from jax.config import config
 
-config.FLAGS.jax_xla_backend = "tpu_driver"
-config.FLAGS.jax_backend_target = "Host TPU Interpreter" 
-
-
 import time
 
 import jax
@@ -46,7 +42,7 @@ params["optimizer"] = optax.scale(0)
 mesh_shape = (jax.device_count() // cores_per_replica, cores_per_replica)
 devices = np.array(jax.devices()).reshape(mesh_shape)
 
-maps.thread_resources.env = maps.ResourceEnv(maps.Mesh(devices, ('dp', 'mp')))
+# maps.thread_resources.env = maps.ResourceEnv(maps.Mesh(devices, ('dp', 'mp')))
 
 tokenizer = transformers.GPT2TokenizerFast.from_pretrained('gpt2')
 
