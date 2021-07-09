@@ -1,5 +1,5 @@
 # geepeeteejay
 
 
-Deploy GPTJ with Elastic Inference on Amazon SageMaker
+Deploy GPT-J with Elastic Inference on Amazon SageMaker
 
